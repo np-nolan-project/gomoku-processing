@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Define the character encoding to support standard English text and symbols. -->
+    <meta charset="UTF-8">
+
+    <!-- Ensure the page is displayed correctly on different screen sizes and devices. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Set the page title displayed in the browser tab. -->
+    <title>Gomoku - Five in a Row</title>
+
+    <!-- Load the p5.js library, which provides the graphics rendering and interaction framework. -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+
+    <!-- Load the main JavaScript file containing the Gomoku game implementation. -->
+    <script src="UiUe.js" defer></script>
+
+    <!-- Load the external stylesheet responsible for the page layout and visual appearance. -->
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+
+    <!--
+        Top navigation bar:
+        Displays the current player's turn, the game result, and the restart button.
+    -->
+    <div class="top-nav">
+
+        <!-- Display the player whose turn it is. -->
+        <span>
+            Whose turn:
+            <span id="whose-turn">Black</span>
+        </span>
+
+        <!-- Display the winner or draw result. -->
+        <span id="winner"></span>
+
+        <!-- Restart the game without refreshing the page. -->
+        <button
+            id="restart-btn"
+            type="button"
+            onclick="restartGame()">
+            Restart
+        </button>
+
+    </div>
+
+</body>
+</html>

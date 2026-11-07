@@ -1,0 +1,122 @@
+/*
+ * ============================================================
+ * Gomoku - Responsive Stylesheet
+ * ============================================================
+ *
+ * This stylesheet controls the appearance and responsive layout
+ * of the Gomoku game interface.
+ *
+ * ============================================================
+ */
+
+
+/*
+ * Game canvas
+ *
+ * Center the p5.js canvas horizontally.
+ * The maximum width prevents the board from exceeding the
+ * available screen width on smaller devices.
+ */
+canvas {
+    display: block;
+    margin: 0 auto;
+
+    border: 1px solid burlywood;
+
+    /* Prevent the canvas from overflowing the viewport. */
+    max-width: calc(100vw - 24px);
+
+    /* Preserve the square aspect ratio when CSS scales the canvas. */
+    height: auto;
+
+    /* Prevent accidental browser gestures while playing on touchscreens. */
+    touch-action: none;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * Top navigation bar
+ *
+ * Use Flexbox to align the player information, game result,
+ * and restart button.
+ *
+ * The navigation bar shares the same maximum width as the canvas.
+ */
+.top-nav {
+    width: 75vmin;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 0 auto 8px;
+    box-sizing: border-box;
+}
+
+
+/*
+ * Navigation bar text
+ *
+ * Remove the original fixed padding and use Flexbox gap
+ * to control spacing between elements.
+ */
+.top-nav > span {
+    padding-right: 0;
+}
+
+
+/*
+ * Winner announcement
+ *
+ * Make the game result easier to distinguish from
+ * the current player's turn.
+ */
+#winner {
+    font-weight: bold;
+}
+
+
+/*
+ * Restart button
+ *
+ * Use a minimal appearance that blends with the navigation bar.
+ * Flexbox automatically positions the button at the right edge.
+ */
+#restart-btn {
+    margin-left: auto;
+
+    border: none;
+    background-color: transparent;
+
+    font-size: medium;
+    cursor: pointer;
+}
+
+
+/*
+ * Button hover effect
+ *
+ * Provide visual feedback when the user moves the pointer
+ * over the Restart button.
+ */
+#restart-btn:hover {
+    text-decoration: underline;
+}
+
+
+/*
+ * Small-screen layout
+ *
+ * Reduce the spacing between navigation elements on mobile devices.
+ */
+@media screen and (max-width: 480px) {
+
+    .top-nav {
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    #restart-btn {
+        font-size: 13px;
+    }
+}
